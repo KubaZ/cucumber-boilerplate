@@ -37,7 +37,7 @@ module.exports = function(dict) {
         .then(/^I expect that element "$string" is( not)* \d+px (broad|tall)$/,
             require('../support/helper/checkDimension'))
 
-         .then(/^I expect that link "$string" ( not)* contains "$string"$/,
+         .then(/^I expect that link "$string"( not)* contains "$string"$/,
             require('../support/helper/checkLink'));
 
 };
