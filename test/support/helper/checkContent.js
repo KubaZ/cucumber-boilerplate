@@ -11,9 +11,9 @@ module.exports =  function(type, element, falseCase, origText, done) {
         should.not.exist(err);
 
         if(falseCase) {
-            origText.should.not.equal(text);
+            text.should.not.contain(origText);
         } else {
-            origText.should.equal(text);
+            text.should.contain(origText);
         }
 
     })

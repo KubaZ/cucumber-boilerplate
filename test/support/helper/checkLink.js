@@ -4,13 +4,13 @@
 
 module.exports = function (selector, falseCase, text, done) {
 
-    this.browser.getAttribute(selector, 'href', function (err, link) {
+    this.browser.getAttribute(selector, 'href', function (err, attr) {
         should.not.exist(err);
 
         if(falseCase) {
-            link.should.not.contain(text);
+            attr.should.not.contain(text);
         } else {
-            link.should.contain(text);
+            attr.should.contain(text);
         }
 
     }).call(done);
