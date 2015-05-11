@@ -58,8 +58,5 @@ module.exports = function() {
 
         .when(/^I refresh site$/, function(done) {
             this.browser.refresh().call(done);
-        })
-        
-
-        
+        });
 }
