@@ -236,6 +236,8 @@ Checkout all predefined snippets. You can find the way how they get used in [`sa
 - `/^I delete the cookie "$string"$/`<br>delete cookie by name
 - `/^I press "$string"$/`<br>press certain key
 - `/^I (accept|dismiss) the alertbox$/`<br>accept or dismiss alertbox
+- `/^I refresh site$/`<br>refresh site
+- `/^I move mouse cursor on element ($string)$/` <br> move the mouse cursor on the element
 
 ## Then steps
 - `/^I expect that the title is( not)* "$string"$/`<br>test title of page

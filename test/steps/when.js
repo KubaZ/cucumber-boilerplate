@@ -59,4 +59,8 @@ module.exports = function() {
         .when(/^I refresh site$/, function(done) {
             this.browser.refresh().call(done);
         });
+
+        .when(/^I move the mouse cursor on the element ($string)$/, function(element, done)) {
+            this.browser.moveTo(element).call(done);
+        }
 }
