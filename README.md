@@ -55,7 +55,7 @@ Scenario: Another test
 
 ```
 
-This test opens the browser and navigates them to google.com to check if the title contains the search 
+This test opens the browser and navigates them to google.com to check if the title contains the search
 query after doing a search. As you can see, it is pretty simple and understandable for everyone.
 
 # How to run the test
@@ -148,7 +148,7 @@ module.exports = function(dict) {
     // ... other predefined snippets
     // ...
     // ...
-    
+
     /**
      * my check username in header snippet
      */
@@ -237,7 +237,7 @@ Checkout all predefined snippets. You can find the way how they get used in [`sa
 - `/^I press "$string"$/`<br>press certain key
 - `/^I (accept|dismiss) the alertbox$/`<br>accept or dismiss alertbox
 - `/^I refresh site$/`<br>refresh site
-- `/^I move mouse cursor on element ($string)$/` <br> move the mouse cursor on the element
+- `/^I move mouse cursor on the element ($string)$/` <br> move the mouse cursor on the element
 
 ## Then steps
 - `/^I expect that the title is( not)* "$string"$/`<br>test title of page
