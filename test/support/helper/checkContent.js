@@ -6,7 +6,7 @@ module.exports =  function(type, element, falseCase, origText, done) {
 
     var command = type !== 'inputfield' ? 'getText' : 'getValue';
 
-    this.browser[command](element, function(err, text) {
+    this.browser[command](this.getSelector(element), function(err, text) {
 
         should.not.exist(err);
 

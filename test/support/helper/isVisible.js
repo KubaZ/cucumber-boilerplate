@@ -4,7 +4,7 @@
 
 module.exports = function (element, falseCase, done) {
 
-    this.browser.isVisible(element, function (err, visible) {
+    this.browser.isVisible(this.getSelector(element), function (err, visible) {
         should.not.exist(err);
 
         if(falseCase) {

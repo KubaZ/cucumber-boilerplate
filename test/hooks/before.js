@@ -4,10 +4,16 @@ var WebdriverIO = require('webdriverio'),
 
 var BeforeHook = module.exports = function(done) {
 
+    var pageObjects = config.pageObjects || {};
+
     var options = config.options;
     options = merge(config.options, config.selenium || {});
     options.desiredCapabilities = config.capabilities;
 
     this.browser = WebdriverIO.remote(options);
     this.browser.init().call(done);
-}
+
+    this.getSelector = function (selector) {
+        return pageObjects[selector] ? pageObjects[selector] : selector;
+    };
+};

@@ -5,12 +5,12 @@
 module.exports = function(element1, falseCase, element2, done) {
     var text1 ='';
 
-    this.browser.getText(element1, function(err, text) {
+    this.browser.getText(this.getSelector(element1), function(err, text) {
 
         should.not.exist(err);
         text1 = text;
 
-    }).getText(element2, function(err, text) {
+    }).getText(this.getSelector(element2), function(err, text) {
 
         should.not.exist(err);
 
