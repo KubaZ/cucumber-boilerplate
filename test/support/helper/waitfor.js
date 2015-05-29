@@ -1,4 +1,4 @@
-module.exports = function(elem, obsolete, ms, isWaitingOnSpecificState, state) {
+module.exports = function(element, obsolete, ms, isWaitingOnSpecificState, state) {
     var command = 'waitForExist',
         done = arguments[arguments.length - 1];
 
@@ -8,5 +8,5 @@ module.exports = function(elem, obsolete, ms, isWaitingOnSpecificState, state) {
     }
 
     ms = parseInt(ms, 10) || 3000;
-    this.browser[command](elem, ms).call(done);
+    this.browser[command](this.getSelector(element), ms).call(done);
 }

@@ -7,27 +7,28 @@ module.exports = function() {
     this.when(/^I (click|doubleclick) on the (link|button|element) "$string"$/, function(action, type, element, done) {
             var elem = type === 'link' ? '=' + element : element,
                 method = action === 'click' ? 'click' : 'doubleClick';
-            this.browser[method](elem).call(done);
+            this.browser[method](this.getSelector(element)).call(done);
         })
 
         .when(/^I (add|set) "$string" to the inputfield "$string"$/, function(method, text, element, done) {
             var command = method === 'add' ? 'addValue' : 'setValue';
-            this.browser[command](element, text).call(done);
+            this.browser[command](this.getSelector(element), text).call(done);
         })
 
         .when(/^I clear the inputfield "$string"$/, function(element, done) {
-            this.browser.clearElement(element).call(done);
+            this.browser.clearElement(this.getSelector(element)).call(done);
         })
 
         .when(/^I drag element "$string" to element "$string"$/, function(source, destination, done) {
-            this.browser.dragAndDrop(source, destination, this.noError).call(done);
+            this.browser.dragAndDrop(this.getSelector(source), this.getSelector(destination), this.noError).call(done);
         })
 
         .when(/^I submit the form "$string"$/, function(form, done) {
             this.browser.submitForm(form).call(done);
         })
 
-        .when(/^I wait on element "$string"( for (\d+)ms)*( to (be checked|be enabled|be selected|be visible|contain a text|contain a value|exist))*$/, require('../support/helper/waitfor'))
+        .when(/^I wait on element "$string"( for (\d+)ms)*( to (be checked|be enabled|be selected|be visible|contain a text|contain a value|exist))*$/,
+            require('../support/helper/waitfor'))
 
         .when(/^I pause for (\d+)ms$/, function(ms, done) {
             this.browser.pause(ms).call(done);
@@ -61,6 +62,6 @@ module.exports = function() {
         })
 
         .when(/^I move the mouse cursor on the element ($string)$/, function(element, done) {
-            this.browser.moveTo(element).call(done);
+            this.browser.moveTo(this.getSelector(element)).call(done);
         });
 }

@@ -2,8 +2,8 @@
  * check if element is visible
  */
 
-module.exports = function (selector, falseCase, done) {
-    this.browser.elements(selector, function (err, elements) {
+module.exports = function (element, falseCase, done) {
+    this.browser.elements(this.getSelector(element), function (err, elements) {
         should.not.exist(err);
 
         if(falseCase) {

@@ -4,7 +4,7 @@
 
 module.exports = function (element, falseCase, done) {
 
-    this.browser.isSelected(element, function(err,isSelected) {
+    this.browser.isSelected(this.getSelector(element), function(err,isSelected) {
         should.not.exist(err);
 
         if(falseCase) {
