@@ -5,7 +5,7 @@
 module.exports = function(isCSS, attrName, elem, falseCase, value, done) {
     var command = isCSS ? 'getCssProperty' : 'getAttribute';
 
-    this.browser[command](elem, attrName, function(err,res) {
+    this.browser[command](this.getSelector(elem), attrName, function(err,res) {
         should.not.exist(err);
 
         /**
